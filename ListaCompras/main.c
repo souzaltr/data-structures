@@ -15,7 +15,7 @@ ListaCompras* inserirProdutos (ListaCompras* destino){
 
     ListaCompras* novo= (ListaCompras*) malloc(sizeof(ListaCompras));
 
-    printf("Qual produto você deseja adicionar à lista de compras? ");
+    printf("\nQual produto você deseja adicionar à lista de compras? ");
     gets(novo->produto);
     printf("\nQual a quantidade? ");
     scanf("%d",&novo->quantidade);
@@ -26,6 +26,9 @@ ListaCompras* inserirProdutos (ListaCompras* destino){
 }
 
 void imprimirLista (ListaCompras* lista){
+
+    getchar();
+
     ListaCompras* auxiliar;
 
     if (lista==NULL){
@@ -39,6 +42,8 @@ void imprimirLista (ListaCompras* lista){
         printf("Produto: %s\n",auxiliar->produto);
         printf("Produto: %d\n",auxiliar->quantidade);
     }
+
+    printf("\nAperte ENTER para continuar.");
 }
 
 int main () {
@@ -53,10 +58,10 @@ int main () {
         //system("cls") windows
 
         printf("\t\t\t\t--- Lista de Compras ---\n\n");
-        printf("Escolha uma opção:\n");
+        printf("Escolha uma opção:\n\n");
         printf("1. Adicionar produto\n");
         printf("2. Imprimir a lista\n");
-        printf("3. Sair\n");
+        printf("3. Sair\n\n");
         printf("Digite a opção: ");
         scanf("%d", &escolha);
 
@@ -66,6 +71,8 @@ int main () {
                 break;
             case 2:
                 imprimirLista(lista1);
+                getchar();
+                system("clear");
                 break;
             case 3:
                 printf("\nSaindo...\n");
