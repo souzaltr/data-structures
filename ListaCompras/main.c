@@ -80,7 +80,6 @@ int main () {
             default:
                 printf("\nOpção inválida! Tente novamente.\n");
                 exit(0);
-                break;
         }
 
     } while (escolha != 3);

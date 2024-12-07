@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1733280580 source:/home/luiz-henrique-souza-santos/DataStructure/ListaCompras/main.c
+1733585673 source:/home/luiz-henrique-souza-santos/DataStructure/ListaCompras/main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
