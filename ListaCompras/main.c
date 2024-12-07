@@ -39,8 +39,8 @@ void imprimirLista (ListaCompras* lista){
     printf("\t\t\t\t--- Lista de Compras ---\n\n");
 
     for(auxiliar=lista;auxiliar!=NULL;auxiliar=auxiliar->proximo){
-        printf("Produto: %s\n",auxiliar->produto);
-        printf("Produto: %d\n",auxiliar->quantidade);
+        printf("Produto: %s",auxiliar->produto);
+        printf("\t\t\tQuantidade: %d\n",auxiliar->quantidade);
     }
 
     printf("\nAperte ENTER para continuar.");
