@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1733690073 source:/home/luiz-henrique-souza-santos/DataStructure/ControleEstoque/main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+
