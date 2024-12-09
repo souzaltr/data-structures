@@ -111,15 +111,52 @@ Produto *removerProduto(Produto *estoque) {
     return estoque;
 }
 
+//Função desafio
+void consultarVolumeEmEstoque(Produto *estoque){
+
+    Produto *auxiliar;
+    Produto *listaVolumeBaixo=NULL;
+    int volume;
+
+    printf("\n--------------------------------------------------------");
+    printf("\n---------Consulta do volume em estoque------");
+    printf("\n--------------------------------------------------------\n");
+    printf("Digite o volume mínimo em estoque para filtrar os produtos: ");
+    scanf("%d", &volume);
+
+    for(auxiliar=estoque;auxiliar!=NULL;auxiliar=auxiliar->proximo){
+
+        if(auxiliar->quantidade < volume){
+
+            Produto* novo= (Produto*) malloc(sizeof(Produto));
+            *novo=*auxiliar;
+            novo->proximo=listaVolumeBaixo;
+
+            listaVolumeBaixo=novo;
+
+        }
+    }
+
+        if (listaVolumeBaixo!=NULL) {
+
+        relatorio(listaVolumeBaixo,0);
+
+    } else {
+
+        printf("\nNenhum produto com volume abaixo foi encontrado!\n");
+
+    }
+}
+
 int main(){
 
     setlocale(LC_ALL,"Portuguese");
 
-    Produto *estoque = NULL;
+    Produto *estoque=NULL;
 
-    int menu=20;
+    int menu= 20;
 
-    system ("color fc"); //estilização do programa (windows)
+    system ("color fc"); //Estilização do programa (windows)
 
     for (;menu!=0;){
         printf("-------------------------------------------------------");
@@ -142,7 +179,7 @@ int main(){
             case 1: estoque=inserir(estoque); break;
             case 2: consultarProduto(estoque); break;
             case 3: relatorio(estoque,0); break;
-            case 4: break;
+            case 4: consultarVolumeEmEstoque(estoque); break;
             case 5: removerProduto(estoque); break;
             case 0: return 0; break;
             default: printf ("\nOpção inválida!");
