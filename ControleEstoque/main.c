@@ -180,7 +180,7 @@ int main(){
             case 2: consultarProduto(estoque); break;
             case 3: relatorio(estoque,0); break;
             case 4: consultarVolumeEmEstoque(estoque); break;
-            case 5: removerProduto(estoque); break;
+            case 5: estoque=removerProduto(estoque); break;
             case 0: return 0; break;
             default: printf ("\nOpção inválida!");
         }
