@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1742427219 source:c:\users\55629\desktop\ed\provaed1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
