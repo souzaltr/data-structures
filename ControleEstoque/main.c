@@ -19,15 +19,13 @@ Produto* inserir(Produto* destino){
 
     printf("\nDigite o código do produto: ");
     scanf("%d",&novo->codigo);
+    getchar();
     printf("\nDigite uma descrição para o produto: ");
-    scanf("%s",&novo->descricao);
-    fflush(stdin);
+    fgets(&novo->descricao,50,stdin);
     printf("\nDigite a quantidade do produto: ");
     scanf("%d",&novo->quantidade);
-    fflush(stdin);
     printf("\nDigite o valor do produto: ");
     scanf("%f",&novo->valor);
-    fflush(stdin);
 
     novo->proximo=destino;
 
@@ -36,7 +34,6 @@ Produto* inserir(Produto* destino){
 
 void consultarProduto(Produto* estoque){
 
-    Produto *auxiliar;
     int codigo;
 
     printf("\n--------------------------------------------------------");
@@ -45,12 +42,12 @@ void consultarProduto(Produto* estoque){
     printf("Digite o código do produto: ");
     scanf("%d",&codigo);
 
-    for(auxiliar=estoque;auxiliar!=NULL;auxiliar=auxiliar->proximo){
-
-        if(auxiliar->codigo==codigo){
-            relatorio(auxiliar,1);
+    while (estoque != NULL){
+        if (estoque->codigo==codigo){
+            relatorio(estoque,1);
             return;
         }
+        estoque=estoque->proximo;
     }
 
     printf("\nProduto não cadastrado!\n\n");
@@ -60,6 +57,12 @@ void relatorio(Produto *estoque, int x){
 
     Produto *auxiliar;
     int i;
+
+    if (estoque==NULL) {
+            printf("Lista vazia!\n");
+            return;
+    }
+
     printf("\n---------------------------------------------------------");
     printf("\n------------------Relatório de produtos------------------");
     printf("\n---------------------------------------------------------\n");
@@ -82,8 +85,8 @@ void relatorio(Produto *estoque, int x){
 
 Produto *removerProduto(Produto *estoque) {
 
-    Produto *anterior;
-    Produto *auxiliar;
+    Produto *anterior=NULL;
+    Produto *aux=estoque;
     int codigo;
 
     printf("\n---------------------------------------------------------");
@@ -92,19 +95,22 @@ Produto *removerProduto(Produto *estoque) {
     printf("Digite o código do produto: ");
     scanf("%d",&codigo);
 
-    for (anterior=NULL, auxiliar=estoque; auxiliar!=NULL && auxiliar->codigo!=codigo; anterior=auxiliar, auxiliar=auxiliar->proximo) {}
+    while (aux!=NULL && aux->codigo != codigo){
+        anterior=aux;
+        aux=aux->proximo;
+    }
 
-    if (auxiliar==NULL) {
+    if (aux==NULL) {
         printf("\nProduto não cadastrado!");
         return estoque;
     }
 
     if (anterior==NULL) {
-        estoque=auxiliar->proximo;
+        estoque=estoque->proximo;
     }
 
     else {
-        anterior->proximo=auxiliar->proximo;
+        anterior->proximo=aux->proximo;
     }
 
     printf("\nProduto removido!\n");
@@ -128,8 +134,8 @@ void consultarVolumeEmEstoque(Produto *estoque){
 
         if(auxiliar->quantidade < volume){
 
-            Produto* novo= (Produto*) malloc(sizeof(Produto));
-            *novo=*auxiliar;
+            Produto *novo= (Produto*) malloc(sizeof(Produto));
+            novo=auxiliar;
             novo->proximo=listaVolumeBaixo;
 
             listaVolumeBaixo=novo;

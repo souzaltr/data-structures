@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1738071852 source:/home/luiz-henrique-souza-santos/Desktop/ED/Pilha/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

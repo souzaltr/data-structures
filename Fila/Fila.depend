@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1746234794 source:/home/luiz-henrique-souza-santos/Desktop/ED/Fila/main.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1746233927 /home/luiz-henrique-souza-santos/Desktop/ED/Fila/fila.h
+

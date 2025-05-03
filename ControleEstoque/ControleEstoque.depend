@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1733762698 source:/home/luiz-henrique-souza-santos/DataStructure/ControleEstoque/main.c
+1734393848 source:/home/luiz-henrique-souza-santos/DataStructure/ControleEstoque/main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
