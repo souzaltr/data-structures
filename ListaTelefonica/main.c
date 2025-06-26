@@ -3,7 +3,7 @@
 #include <locale.h>
 #include <string.h>
 
-typedef struct lista{
+typedef struct {
     char nome[50];
     char email[50];
     int telefone;
