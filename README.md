@@ -2,7 +2,7 @@
 
 Aqui, você encontrará os seguintes tipos de conteúdo:
 
-- **Exercícios de Implementação**: Implementações de diversas estruturas de dados na linguagem C.
+- **Exercícios de Implementação**: Implementações de diversas estruturas de dados na linguagem C e Java.
 - **Algoritmos**: Algoritmos relacionados ao uso e manipulação dessas estruturas, como busca, ordenação, remoção entre outros.
 - **Exercícios Práticos**: Exemplos de problemas práticos que utilizam estruturas de dados para encontrar soluções.
 
